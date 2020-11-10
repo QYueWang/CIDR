@@ -15,4 +15,4 @@
 
 提供了一个基础示例，test.html文件，打开即可使用。
 
-![image-20201110235951311](images/image-20201110235951311.png)
+![image-20201110235951311](https://github.com/QYueWang/CIDR/blob/main/images/image-20201110235951311.png)
