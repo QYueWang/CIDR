@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<title>CalculateCIDR</title>
+		<meta charset="UTF-8">
+		<script src="CalculateCIDR.js"></script>
+		<link rel="stylesheet" href="reset.css">
+		<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="test.css">
+	</head>
+	<body>
+		<div class="content">
+			<div class="tab_content">
+				<div class="input_area">
+					<input type="text" id="cidr" class="form-control"/>
+					<button id="calculate" class="preview_btn btn btn-primary" onclick=calculate()>计算</button>
+				</div>
+				<div class="result_area">
+					<p>
+						<span class="label">子网掩码：</span><span id="netmask"></span>
+					</p>
+					<p>
+						<span class="label">网络地址：</span><span id="netaddress"></span>
+					</p>
+					<p>
+						<span class="label">广播地址：</span><span id="broadcast"></span>
+					</p>
+					<p>
+						<span class="label">起始IP：</span><span id="startip"></span>
+					</p>
+					<p>
+						<span class="label">结束IP：</span><span id="endip"></span>
+					</p>
+					<p>
+						<span class="label">IP数：</span><span id="hostnum"></span>
+					</p>
+				</div>
+			</div>
+		</div>
+		
+		<script>
+			function calculate() {
+				var cidr = document.getElementById("cidr").value;
+				if(cidr.split('/').length != 2) {
+					alert("CIDR地址不正确");
+				} else {
+					var result = CalculateCIDR(cidr);
+					document.getElementById("netmask").innerHTML = result[0];
+					document.getElementById("netaddress").innerHTML = result[1];
+					document.getElementById("broadcast").innerHTML = result[2];
+					document.getElementById("startip").innerHTML = result[3];
+					document.getElementById("endip").innerHTML = result[4];
+					document.getElementById("hostnum").innerHTML = result[5];
+				}
+			}
+		</script>
+	</body>
+</html>
